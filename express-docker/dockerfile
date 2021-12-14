@@ -1,0 +1,8 @@
+FROM node:latest
+RUN npm i -g n
+RUN n lts
+RUN npm i -g pm2
+RUN mkdir /home/app
+RUN mkdir /home/log
+WORKDIR /home
+ENTRYPOINT rm -r app && mkdir app && git clone https://github.com/pleroma1112/web-express-app.git app && cd app && npm install && pm2 start -i max bin/www && tail -f /dev/null

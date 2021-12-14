@@ -1,0 +1,7 @@
+FROM mysql:latest
+ENV MYSQL_ROOT_PASSWORD="04010401"
+ENV MYSQL_USER="web-admin"
+ENV MYSQL_PASSWORD="04010401"
+ENV MYSQL_DATABASE="web"
+COPY init.sql /docker-entrypoint-initdb.d/
+ENTRYPOINT --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci && tail -f /dev/null

@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "pbkdf2-password": "^1.2.1"
+  }
+}
